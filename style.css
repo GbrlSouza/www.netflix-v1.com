@@ -1,0 +1,642 @@
+/* Color ---------------------------------------------- */
+
+:root {
+    --color-invalid: #e50914;
+    --color-invalid-hover: #f11722;
+    --color-valid: rgb(13, 150, 65);
+    --color-forgot: #0071eb;
+    --color-forgot-hover: #2786ec;
+    --color-input: #333333;
+    --color-bg-2: rgba(0, 0, 0, 0.4);
+    --header-box-shadow: inset 10rem 10rem 24rem rgba(0, 0, 0, 0.5),
+        inset -10rem -10rem 24rem rgba(0, 0, 0, 0.5);
+}
+
+/* Box Sizing ----------------------------------------- */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Text, Tag Style ------------------------------------ */
+
+h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 0.84rem;
+    font-weight: 300;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+a,
+li {
+    text-decoration: none;
+    list-style: none;
+}
+
+p,
+span {
+    font-weight: 300;
+}
+
+img,
+video {
+    max-width: 100%;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background-color: black;
+    color: white;
+}
+
+/* Text Style ----------------------------------------- */
+
+.text-white-1 {
+    color: white;
+    font-weight: 500;
+}
+
+.text-blue {
+    font-size: 0.9rem;
+    color: var(--color-forgot);
+}
+
+.text-xl {
+    font-size: clamp(2rem, 10.4vw, 3.2rem);
+    font-weight: 600;
+}
+
+.text-lg {
+    font-size: clamp(1.2rem, 8.8vw, 2.8rem);
+    font-weight: 600;
+}
+
+.text-md {
+    font-size: clamp(0.8rem, 6vw, 1.6rem);
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.text-md-1 {
+    font-size: clamp(0.8rem, 4.8vw, 1.6rem);
+    font-weight: 300;
+    line-height: 1.3;
+}
+
+.text-sm {
+    font-size: clamp(0.6rem, 4.5vw, 1.2rem);
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.text-terms {
+    font-size: 0.8rem;
+    color: grey;
+}
+
+.text-error {
+    position: absolute;
+    left: 0.1rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: orange;
+    display: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-underline {
+    cursor: pointer;
+}
+
+.text-underline:hover {
+    text-decoration: underline;
+}
+
+/* Grid ----------------------------------------------- */
+
+.border-gray {
+    border-bottom: 0.4rem solid var(--color-input);
+}
+
+.grid-reversed {
+    order: 2;
+}
+
+/* Spacing -------------------------------------------- */
+
+.margin-top {
+    margin-top: 1rem;
+}
+
+.margin-top-1 {
+    margin-top: 1.4rem;
+}
+
+.margin-bottom-1 {
+    margin-bottom: 1.4rem;
+}
+
+.margin-inline {
+    margin-inline: auto;
+}
+
+.margin-left {
+    margin-left: 0.6rem;
+}
+
+/* Button -------------------------------------------- */
+
+button,
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-family: inherit;
+    font-weight: inherit;
+    padding: 1.1em;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    height: 3.2rem;
+    max-width: 100%;
+}
+
+.btn-primary {
+    font-size: 1.2em;
+    background: var(--color-invalid);
+    margin-inline: auto;
+}
+
+.btn-signin {
+    height: 2.2rem;
+    padding: 0.8em;
+    background-color: var(--color-invalid);
+    font-size: 1em;
+}
+
+.btn-primary:hover,
+.btn-signin:hover {
+    background-color: var(--color-invalid-hover);
+}
+
+/* Logo ---------------------------------------------- */
+
+.logo {
+    margin-top: 0.4rem;
+    width: 8rem;
+}
+
+/* Nav ----------------------------------------------- */
+
+.nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 1.4rem 3.2rem;
+    z-index: 2;
+}
+
+.nav-4 {
+    position: absolute;
+    justify-content: space-between;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+/* Input Field & State-------------------------------- */
+
+::placeholder {
+    color: transparent;
+}
+
+::-ms-input-placeholder {
+    color: transparent;
+}
+
+label {
+    color: white;
+    transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+}
+
+.input {
+    position: relative;
+}
+
+.input-field {
+    border: none;
+    outline: none;
+    font-size: 1em;
+    border-radius: 4px;
+    padding-inline: 1.36em;
+    padding-block: 1.8em 1em;
+    height: 4rem;
+    width: 100%;
+}
+
+.input-label {
+    display: grid;
+    position: absolute;
+    top: 1.36rem;
+    left: 1.36rem;
+    color: gray;
+    transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+}
+
+.input-field:focus~.label-size,
+.input-field:not(:placeholder-shown)~.label-size {
+    top: 0.6rem;
+    left: 1.36rem;
+    font-size: 0.9em;
+}
+
+.input-field:valid {
+    border: 2px solid var(--color-valid);
+}
+
+.input-field:not(:placeholder-shown):invalid {
+    border-bottom: 3px solid orange;
+}
+
+.input-field:not(:placeholder-shown):invalid~.text-error {
+    display: block;
+}
+
+/* Header Container ------------------------------------------------------ */
+
+.header {
+    position: relative;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 96vh;
+    background: url("https://assets.nflxext.com/ffe/siteui/vlv3/5e48e7b6-350d-48d9-96d6-de8ca173c89f/26c35d01-db23-4f28-b2eb-42490d7f4002/ID-id-20221219-popsignuptwoweeks-perspective_alpha_website_large.jpg") center/cover no-repeat;
+    overflow: hidden;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg-2);
+    box-shadow: var(--header-box-shadow);
+    border-bottom: 0.4rem solid var(--color-input);
+    z-index: 1;
+}
+
+.header-container {
+    max-width: 42rem;
+    padding-block: 4rem;
+    padding-inline: 4%;
+    z-index: 2;
+}
+
+/* Features ------------------------------------------ */
+
+.features {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: clamp(0.4rem, 1vh, 2rem);
+    padding-block: 4rem;
+    padding-inline: 6%;
+    max-width: 80rem;
+    min-height: 60vh;
+}
+
+.text-area {
+    display: grid;
+    gap: 1rem;
+}
+
+.img-area {
+    position: relative;
+    overflow: hidden;
+}
+
+.grid-reversed {
+    order: 2;
+}
+
+.video-1 {
+    pointer-events: none;
+    position: absolute;
+    height: 74%;
+    width: 73.2%;
+    top: 11%;
+    left: 13%;
+    z-index: -1;
+}
+
+.video-2 {
+    pointer-events: none;
+    position: absolute;
+    height: 78%;
+    width: 63%;
+    top: -6%;
+    left: 18%;
+    z-index: -1;
+}
+
+.download {
+    position: absolute;
+    bottom: 7%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 0.6rem;
+    border: 1px solid gray;
+    border-radius: 0.6rem;
+    background: black;
+    width: 68%;
+}
+
+.download :first-child {
+    width: 18%;
+}
+
+.download :last-child {
+    width: 14%;
+}
+
+/* F.A.Q --------------------------------------------- */
+
+.faq {
+    display: grid;
+    gap: 2rem;
+    padding-block: 4rem;
+    padding-inline: 3%;
+}
+
+.faq-accordion {
+    display: grid;
+    gap: 0.4rem;
+    max-width: 50rem;
+}
+
+.faq-input {
+    display: none;
+}
+
+.faq-label {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 1rem;
+    padding-inline: 3%;
+    background-color: var(--color-input);
+    border-bottom: 4px solid black;
+}
+
+.faq-content {
+    background-color: var(--color-input);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in, padding 0.3s ease-in;
+}
+
+.faq-content p {
+    margin: 2rem;
+}
+
+.faq-input:checked~.faq-content {
+    max-height: 60rem;
+    transition: max-height 0.3s ease-in;
+}
+
+.faq-input:checked~.faq-label i {
+    transform: rotate(45deg);
+    transition: max-height 0.3s ease-in, padding 0.3s ease-in;
+}
+
+.membership .input {
+    max-width: 40rem;
+    margin: 0 auto;
+}
+
+/* Footer -------------------------------------------- */
+
+.footer {
+    padding: 3rem;
+}
+
+.footer-container {
+    display: grid;
+    max-width: 50rem;
+    gap: 1.6rem;
+    color: gray;
+}
+
+.footer-black {
+    background-color: black;
+}
+
+.links {
+    display: flex;
+    line-height: 1.7;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+/* Language Option ----------------------------------- */
+
+.language {
+    position: relative;
+}
+
+.language-select {
+    appearance: none;
+    cursor: pointer;
+    height: 2.4rem;
+    max-width: 12rem;
+    border-radius: 0.2rem;
+    padding-inline: 2.4rem;
+    outline: none;
+    color: gray;
+    background-color: transparent;
+}
+
+.language-icon {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+}
+
+.globe {
+    position: absolute;
+    left: 1rem;
+}
+
+.chevron {
+    position: absolute;
+    left: 10rem;
+}
+
+.top {
+    height: 2.2rem;
+    padding-inline: 0.6rem;
+    width: 3.6rem;
+    color: white;
+    font-weight: 600;
+    border: 1.8px solid white;
+}
+
+.top-icon {
+    color: white;
+}
+
+.chevron-top {
+    position: absolute;
+    left: 2.4rem;
+    font-size: 0.6rem;
+    font-weight: 600;
+}
+
+/* Media Query --------------------------------------- */
+
+/* Nav Media Query */
+
+@media (320px <=width <=640px) {
+    .nav {
+        padding-inline: 1rem;
+    }
+
+    .logo {
+        width: 6rem;
+    }
+}
+
+/* Body Media Query */
+
+@media (768px <=width <=940px) {
+    .header {
+        min-height: 72vh;
+    }
+}
+
+@media (320px <=width <=940px) {
+    .features {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .grid-reversed {
+        order: 0;
+    }
+
+    .img-area .devices {
+        width: 86%;
+    }
+
+    .video-2 {
+        height: 80%;
+        width: 53.3%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .download {
+        width: 50%;
+    }
+
+    .faq-content p {
+        margin: 1rem;
+    }
+}
+
+@media (450px <=width <=640px) {
+    .download {
+        width: 70%;
+    }
+}
+
+@media (350px <=width <=520px) {
+    .header {
+        min-height: 93vh;
+    }
+
+    .down {
+        display: block;
+    }
+
+    .download {
+        width: 80%;
+    }
+}
+
+@media (320px <=width <=350px) {
+    .header {
+        min-height: 80vh;
+    }
+
+    .down {
+        display: block;
+    }
+
+    .download {
+        width: 86%;
+        padding: 0.2rem;
+    }
+}
+
+/* Footer Media Query */
+
+@media (320px <=width <=640px) {
+    .footer {
+        padding-inline: 2rem;
+        border-top: 2px solid gray;
+    }
+
+    .links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (320px <=width <=450px) {
+    .links {
+        display: block;
+        line-height: 2;
+    }
+}
+
+@media (min-width: 2048px) {
+
+    .header-container,
+    .nav,
+    section,
+    footer {
+        zoom: 2;
+    }
+}
